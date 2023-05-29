@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free bootstrap documentation template">
+    <title>Group Chat</title>
+    <!-- using online links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- using local links -->
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/sidebar-themes.min.css">
+    <link rel="stylesheet" href="css/bootstrap-treeview.min.css">
+    <link rel="stylesheet" href="css/postman.min.css">
+
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> </head>
+
+<body>
+    <div class="page-wrapper toggled light-theme">
+        <div class="modal dark-background" id="snippetModal" tabindex="-1" role="dialog" aria-labelledby="documentation-response-modal" style="display: none;">
+        <div class="modal-dialog" role="document">
+          <div class="modal-header">
+            <div class="title">Example Response</div>
+            <button type="button" class="close btn-circle" data-dismiss="modal" aria-label="Close">
+              <div>
+              <span id="closeModal" aria-hidden="true">×</span>
+              </div>
+            </button>
+          </div>
+          <div class="modal-content">
+            <div class="modal-body" style="width: 540.5px;">
+              <pre class="  language-javascript">
+                  <code class=" language-javascript"></code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+        <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <!-- sidebar-brand  -->
+                <div class="sidebar-item sidebar-brand text-white font-weight-bold">API Documentation</div>
+                <!-- sidebar-header  -->
+                <!-- sidebar-menu  -->
+                <div class=" sidebar-item sidebar-menu">
+                    <div id="tree"></div>
+                </div>
+                <!-- sidebar-menu  -->
+            </div>
+        </nav>
+        <!-- page-content  -->
+        <main class="page-content">
+            <div id="overlay" class="overlay"></div>
+            <div class="container-fluid">
+                <div class="row d-flex align-items-center p-3 border-bottom">
+                    <div class="col-md-1">
+                        <a id="toggle-sidebar" class="btn rounded-0 p-3" href="#"> <i class="fas fa-bars"></i> </a>
+                    </div>
+                    <div class="col-md-9"></div>
+                    <div class="col-md-2 text-left">
+                            <a href="GroupChatFinal.json" class="btn btn-sm btn-primary btn-rounded" download>
+                                <i class="fas fa-download"></i> Collection</a>
+                        
+                            <a href="groupchatEnv.json" class="btn btn-sm btn-primary btn-rounded" download>
+                                <i class="fas fa-download"></i> Env</a>
+                        
+                    </div>
+                </div>
+                <div class="row p-lg-4">
+                    <article class="main-content col-md-12 pr-lg-9" id="doc-body">
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12">
+                                <div class="api-information">
+                                    <div class="collection-name">
+                                        <p>Group Chat</p>
+                                    </div>
+                                    <div class="collection-description">
+                                        <p>API Document for Group Chat APP. You can create users and groups. Add, Remove Memebers to group. 
+                                            Delete the group. Post a message into group, Get recent conversation of user, group. Mark convos read.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="1">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            create_new_user <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">http://localhost:8080/api/v1/admin/register/create_new_user</div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">role_name</div>
+                                            <div class="value col-md-9 col-xs-12">{{role_name}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">authorization</div>
+                                            <div class="value col-md-9 col-xs-12">{{token}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">handle</div>
+                                            <div class="value col-md-9 col-xs-12">{{headerhandle}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="create_new_user">
+                                                  <code>
+                                                    
+{
+    "name":"rishabh nandwal1",
+    "handle": "rishabhn",
+    "password":"12345",
+    "phone":"7828553569",
+    "email":"rishabhnandwal3@gmail.com"
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">create_new_user</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="1" data-response-info="response_1">create_new_user</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="1"  data-id="response_1">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="create_new_user">
+                                                <code class="is-highlighted">
+POST http://localhost:8080/api/v1/admin/register/create_new_user
+
+{
+    "name":"rishabh nandwal1",
+    "handle": "rishabhn",
+    "password":"12345",
+    "phone":"7828553569",
+    "email":"rishabhnandwal3@gmail.com"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="2">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            edit_user <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">http://localhost:8080/api/v1/admin/register/edit_user</div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">authorization</div>
+                                            <div class="value col-md-9 col-xs-12">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoicmloc2JobmFuZHdhbCIsImlhdCI6MTY4NTAwMjAzOH0.ZDGHGgPoh6mefYN8Ge0I0cvve98dqiy0uK2VYSOcMaA</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">role_name</div>
+                                            <div class="value col-md-9 col-xs-12">admin</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="edit_user">
+                                                  <code>
+                                                    
+{
+    "edit_body": {
+        "name": "Rubal Desai",
+        "handle": "RubalD",
+        "password": "12345",
+        "phone": "7828553568",
+        "email": "rubal@gmail.com"
+    },
+    "edited_user_handle": "rihsbhnandwal1"
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">edit_user</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="2" data-response-info="response_2">edit_user</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="2"  data-id="response_2">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="edit_user">
+                                                <code class="is-highlighted">
+POST http://localhost:8080/api/v1/admin/register/edit_user
+
+{
+    "edit_body": {
+        "name": "Rubal Desai",
+        "handle": "RubalD",
+        "password": "12345",
+        "phone": "7828553568",
+        "email": "rubal@gmail.com"
+    },
+    "edited_user_handle": "rihsbhnandwal1"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="3">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            login user <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">http://localhost:8080/api/v1/login</div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="login user">
+                                                  <code>
+                                                    
+{
+    "handle":{{handle}},
+    "password":{{password}}
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">login user</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="3" data-response-info="response_3">login user</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="3"  data-id="response_3">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="login user">
+                                                <code class="is-highlighted">
+POST http://localhost:8080/api/v1/login
+
+{
+    "handle":"admin",
+    "password":"adminpassword"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="4">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            create_group <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">http://localhost:8080/api/v1/user/create_group</div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">authorization</div>
+                                            <div class="value col-md-9 col-xs-12">{{token}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">role_name</div>
+                                            <div class="value col-md-9 col-xs-12">{{role_name}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">handle</div>
+                                            <div class="value col-md-9 col-xs-12">{{headerhandle}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="create_group">
+                                                  <code>
+                                                    
+{
+    "group_name": "Talkers1",
+    "user_handles": ["rishabhnandwal1", "prabalt", "gskdjgk"]
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">create_group</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="4" data-response-info="response_4">create_group</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="4"  data-id="response_4">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="create_group">
+                                                <code class="is-highlighted">
+POST http://localhost:8080/api/v1/user/create_group
+
+{
+    "group_name": "Talkers1",
+    "user_handles": ["rishabhnandwal1", "prabalt", "gskdjgk"]
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="5">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="DELETE method" >DELETE</span>
+                                            delete_group <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">http://localhost:8080/api/v1/user/delete_group</div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">authorization</div>
+                                            <div class="value col-md-9 col-xs-12">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoicmloc2JobmFuZHdhbCIsImlhdCI6MTY4NTI2NDY1OH0.UhXX4D214C0rKIjYym9pqHRH3q6E2-b2sy6-WDh3t9M</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">role_name</div>
+                                            <div class="value col-md-9 col-xs-12">user</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">handle</div>
+                                            <div class="value col-md-9 col-xs-12">rihsbhnandwal</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">PARAMS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12"></div>
+                                            <div class="value col-md-9 col-xs-12"></div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12"></div>
+                                            <div class="value col-md-9 col-xs-12">user</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="delete_group">
+                                                  <code>
+                                                    
+{
+    "group_name": "Talkers"
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">delete_group</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="5" data-response-info="response_5">delete_group</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="5"  data-id="response_5">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="delete_group">
+                                                <code class="is-highlighted">
+DELETE http://localhost:8080/api/v1/user/delete_group
+
+{
+    "group_name": "Talkers"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="6">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            Search Users <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">http://localhost:8080/api/v1/user/get_users?search=pra</div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">authorization</div>
+                                            <div class="value col-md-9 col-xs-12">{{token}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">handle</div>
+                                            <div class="value col-md-9 col-xs-12">{{headerhandle}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">PARAMS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">search</div>
+                                            <div class="value col-md-9 col-xs-12">pra</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Search Users</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="6" data-response-info="response_6">Search Users</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="6"  data-id="response_6">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Search Users">
+                                                <code class="is-highlighted">
+GET http://localhost:8080/api/v1/user/get_users?search=pra</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="7">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            add_members to group <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">http://localhost:8080/api/v1/user/groups/add_members</div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">authorization</div>
+                                            <div class="value col-md-9 col-xs-12">{{token}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">role_name</div>
+                                            <div class="value col-md-9 col-xs-12">{{role_name}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Content-Type</div>
+                                            <div class="value col-md-9 col-xs-12">application/json</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">handle</div>
+                                            <div class="value col-md-9 col-xs-12">{{headerhandle}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="add_members to group">
+                                                  <code>
+                                                    
+{
+    "group_name": "Talkers1",
+    "user_handles":["RubalD", "admin", "prabalt","rihsbhnandwal"]
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">add_members to group</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="7" data-response-info="response_7">add_members to group</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="7"  data-id="response_7">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="add_members to group">
+                                                <code class="is-highlighted">
+POST http://localhost:8080/api/v1/user/groups/add_members
+
+{
+    "group_name": "Talkers1",
+    "user_handles":["RubalD", "admin", "prabalt","rihsbhnandwal"]
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="8">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            remove_members from group <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">http://localhost:8080/api/v1/user/groups/remove_members</div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">authorization</div>
+                                            <div class="value col-md-9 col-xs-12">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoicmloc2JobmFuZHdhbCIsImlhdCI6MTY4NTI2NDY1OH0.UhXX4D214C0rKIjYym9pqHRH3q6E2-b2sy6-WDh3t9M</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">role_name</div>
+                                            <div class="value col-md-9 col-xs-12">user</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Content-Type</div>
+                                            <div class="value col-md-9 col-xs-12">application/json</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">handle</div>
+                                            <div class="value col-md-9 col-xs-12">rihsbhnandwal</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="remove_members from group">
+                                                  <code>
+                                                    
+{
+    "group_name": "Talkers",
+    "user_handles":["prabalt"]
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">remove_members from group</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="8" data-response-info="response_8">remove_members from group</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="8"  data-id="response_8">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="remove_members from group">
+                                                <code class="is-highlighted">
+POST http://localhost:8080/api/v1/user/groups/remove_members
+
+{
+    "group_name": "Talkers",
+    "user_handles":["prabalt"]
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="9">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            post_message <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">http://localhost:8080/api/v1/group/post_message</div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">authorization</div>
+                                            <div class="value col-md-9 col-xs-12">{{token}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">role_name</div>
+                                            <div class="value col-md-9 col-xs-12">{{role_name}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Content-Type</div>
+                                            <div class="value col-md-9 col-xs-12">application/json</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">handle</div>
+                                            <div class="value col-md-9 col-xs-12">{{headerhandle}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="post_message">
+                                                  <code>
+                                                    
+{
+    "group_name": "Talkers1",
+    "message_text":"Hello All !! hpw arre you I just joined this group Talkers"
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">post_message</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="9" data-response-info="response_9">post_message</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="9"  data-id="response_9">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="post_message">
+                                                <code class="is-highlighted">
+POST http://localhost:8080/api/v1/group/post_message
+
+{
+    "group_name": "Talkers1",
+    "message_text":"Hello All !! hpw arre you I just joined this group Talkers"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="10">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            get_conversation by Group Name <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">http://localhost:8080/api/v1/get_conversation/Talkers1/0/10</div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">authorization</div>
+                                            <div class="value col-md-9 col-xs-12">{{token}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">role_name</div>
+                                            <div class="value col-md-9 col-xs-12">{{role_name}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Content-Type</div>
+                                            <div class="value col-md-9 col-xs-12">application/json</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">handle</div>
+                                            <div class="value col-md-9 col-xs-12">{{headerhandle}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">get_conversation by Group Name</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="10" data-response-info="response_10">get_conversation by Group Name</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="10"  data-id="response_10">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="get_conversation by Group Name">
+                                                <code class="is-highlighted">
+GET http://localhost:8080/api/v1/get_conversation/Talkers1/0/10</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="11">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            get_recent_conversation of user <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">http://localhost:8080/api/v1/get_recent_conversation?page=0&limit=10</div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">authorization</div>
+                                            <div class="value col-md-9 col-xs-12">{{token}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">role_name</div>
+                                            <div class="value col-md-9 col-xs-12">{{role_name}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Content-Type</div>
+                                            <div class="value col-md-9 col-xs-12">application/json</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">handle</div>
+                                            <div class="value col-md-9 col-xs-12">{{headerhandle}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">PARAMS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">page</div>
+                                            <div class="value col-md-9 col-xs-12">0</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">limit</div>
+                                            <div class="value col-md-9 col-xs-12">10</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">get_recent_conversation of user</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="11" data-response-info="response_11">get_recent_conversation of user</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="11"  data-id="response_11">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="get_recent_conversation of user">
+                                                <code class="is-highlighted">
+GET http://localhost:8080/api/v1/get_recent_conversation?page=0&limit=10</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="12">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            mark_message_read by user in group  <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">http://localhost:8080/api/v1/group/mark_read</div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">authorization</div>
+                                            <div class="value col-md-9 col-xs-12">{{token}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">role_name</div>
+                                            <div class="value col-md-9 col-xs-12">{{role_name}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Content-Type</div>
+                                            <div class="value col-md-9 col-xs-12">application/json</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">handle</div>
+                                            <div class="value col-md-9 col-xs-12">{{headerhandle}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="mark_message_read by user in group ">
+                                                  <code>
+                                                    
+{
+    "group_name": "Talkers1"
+}
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">mark_message_read by user in group </span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="12" data-response-info="response_12">mark_message_read by user in group </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="12"  data-id="response_12">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="mark_message_read by user in group ">
+                                                <code class="is-highlighted">
+POST http://localhost:8080/api/v1/group/mark_read
+
+{
+    "group_name": "Talkers1"
+}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="13">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="DELETE method" >DELETE</span>
+                                            delete message by id <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">http://localhost:8080/api/v1/delete/message/4524d0d266c74eb9abbda737810a6089</div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">authorization</div>
+                                            <div class="value col-md-9 col-xs-12">{{token}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">role_name</div>
+                                            <div class="value col-md-9 col-xs-12">{{role_name}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Content-Type</div>
+                                            <div class="value col-md-9 col-xs-12">application/json</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">handle</div>
+                                            <div class="value col-md-9 col-xs-12">{{headerhandle}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">delete message by id</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="13" data-response-info="response_13">delete message by id</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="13"  data-id="response_13">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="delete message by id">
+                                                <code class="is-highlighted">
+DELETE http://localhost:8080/api/v1/delete/message/4524d0d266c74eb9abbda737810a6089</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="14">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="POST method" >POST</span>
+                                            logout <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">http://localhost:8080/api/v1/logout</div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">HEADERS</div>
+                                        <hr>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Content-Type</div>
+                                            <div class="value col-md-9 col-xs-12">application/json</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">Authorization</div>
+                                            <div class="value col-md-9 col-xs-12">{{token}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                          <div class="param row">
+                                            <div class="name col-md-3 col-xs-12">handle</div>
+                                            <div class="value col-md-9 col-xs-12">{{headerhandle}}</div>
+                                            <div class="description col-md-9 col-xs-12"><p>None</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    
+                                    <div class="request-body">
+                                        <div class="body-heading">BODY <span class="body-type">raw</span></div>
+                                        <hr>
+                                            <div class="raw-body code-snippet">
+                                              <pre class="body-block click-to-expand-wrapper is-snippet-wrapper " data-title="logout">
+                                                  <code>
+                                                    
+
+                                                  </code>
+                                              </pre>
+                                            </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">logout</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="14" data-response-info="response_14">logout</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="14"  data-id="response_14">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="logout">
+                                                <code class="is-highlighted">
+POST http://localhost:8080/api/v1/logout
+
+</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </main>
+        <!-- page-content" -->
+    </div>
+    <!-- page-wrapper -->
+    <!-- using online scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+    <script src="https://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/bootstrap-treeview.min.js"></script>
+    <script src="js/main.min.js"></script>
+    <script type="application/javascript">
+        var data = [{'text': 'create_new_user', 'href': '#1', 'method': 'POST'}, {'text': 'edit_user', 'href': '#2', 'method': 'POST'}, {'text': 'login user', 'href': '#3', 'method': 'POST'}, {'text': 'create_group', 'href': '#4', 'method': 'POST'}, {'text': 'delete_group', 'href': '#5', 'method': 'DELETE'}, {'text': 'Search Users', 'href': '#6', 'method': 'GET'}, {'text': 'add_members to group', 'href': '#7', 'method': 'POST'}, {'text': 'remove_members from group', 'href': '#8', 'method': 'POST'}, {'text': 'post_message', 'href': '#9', 'method': 'POST'}, {'text': 'get_conversation by Group Name', 'href': '#10', 'method': 'GET'}, {'text': 'get_recent_conversation of user', 'href': '#11', 'method': 'GET'}, {'text': 'mark_message_read by user in group ', 'href': '#12', 'method': 'POST'}, {'text': 'delete message by id', 'href': '#13', 'method': 'DELETE'}, {'text': 'logout', 'href': '#14', 'method': 'POST'}]
+        $('#tree').treeview({
+            data: data,
+            levels: 10,
+            expandIcon: 'fas fa-caret-right',
+            collapseIcon: 'fas fa-caret-down',
+            enableLinks: true,
+            showIcon: true,
+            showMethod: true
+        });
+    </script>
+
+</body>
+
+</html>
