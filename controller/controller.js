@@ -119,7 +119,7 @@ exports.getUser = async (req, res) => {
  */
 exports.createUser = async (req, res) => {
     try {
-        if (!req || !req.headers.role_name || !req.body.name || !req.headers.handle || !req.body.password || !req.body.email) {
+        if (!req || !req.headers.role_name || !req.body.name || !req.body.handle || !req.body.password || !req.body.email) {
             let error = new Error(app_constants.res_invalid_params);
             error.status_code = app_constants.res_code_invalid_params;
             console.log(error);
@@ -130,7 +130,7 @@ exports.createUser = async (req, res) => {
         } else {
             let user = {
                 "name": req.body.name,
-                "handle": req.headers.handle,
+                "handle": req.body.handle,
                 "password": req.body.password,
                 "phone": req.body.phone,
                 "email": req.body.email,
